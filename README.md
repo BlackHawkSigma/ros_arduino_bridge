@@ -85,7 +85,7 @@ Your Arduino will likely connect to your Linux computer as port /dev/ttyACM# or 
 
     $ ls /dev/ttyACM*
 
-or 
+or
 
     $ ls /dev/ttyUSB*
 
@@ -111,7 +111,7 @@ When you log back in again, try the command:
 
     $ groups
 
-and you should see a list of groups you belong to including dialout. 
+and you should see a list of groups you belong to including dialout.
 
 Installation of the ros\_arduino\_bridge Stack
 ----------------------------------------------
@@ -148,7 +148,7 @@ Loading the ROSArduinoBridge Sketch
   You should be able to find it by going to:
 
     File->Sketchbook->ROSArduinoBridge
-  
+
 NOTE: If you don't have the required base controller hardware but
 still want to try the code, see the notes at the end of the file.
 

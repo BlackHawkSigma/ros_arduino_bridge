@@ -1,21 +1,21 @@
 /***************************************************************
    Motor driver definitions
-   
+
    Add a "#elif defined" block to this file to include support
    for a particular motor driver.  Then add the appropriate
    #define near the top of the main ROSArduinoBridge.ino file.
-   
+
    *************************************************************/
 
 #ifdef USE_BASE
-   
+
 #if defined POLOLU_VNH5019
   /* Include the Pololu library */
   #include "DualVNH5019MotorShield.h"
 
   /* Create the motor driver object */
   DualVNH5019MotorShield drive;
-  
+
   /* Wrap the motor driver initialization */
   void initMotorController() {
     drive.init();
@@ -38,7 +38,7 @@
 
   /* Create the motor driver object */
   DualMC33926MotorShield drive;
-  
+
   /* Wrap the motor driver initialization */
   void initMotorController() {
     drive.init();
