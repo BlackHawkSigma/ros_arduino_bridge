@@ -45,23 +45,25 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************/
 
-//#define USE_BASE      // Enable the base controller code
-#undef USE_BASE     // Disable the base controller code
-#define USE_ZUMO_BASE   // Enable use of Zumo32U4
+#define USE_BASE      // Enable the base controller code
+//#undef USE_BASE     // Disable the base controller code
 
 /* Define the motor controller and encoder library you are using */
 #ifdef USE_BASE
    /* The Pololu VNH5019 dual motor driver shield */
-   #define POLOLU_VNH5019
+   //#define POLOLU_VNH5019
 
    /* The Pololu MC33926 dual motor driver shield */
    //#define POLOLU_MC33926
 
    /* The RoboGaia encoder shield */
-   #define ROBOGAIA
+   //#define ROBOGAIA
 
    /* Encoders directly attached to Arduino board */
    //#define ARDUINO_ENC_COUNTER
+
+   /* Zumo32U4 */
+   #define ZUMO32U4
 #endif
 
 //#define USE_SERVOS  // Enable use of PWM servos as defined in servos.h
@@ -114,6 +116,11 @@
    in this number of milliseconds */
   #define AUTO_STOP_INTERVAL 2000
   long lastMotorCommand = AUTO_STOP_INTERVAL;
+#endif
+
+#ifdef ZUMO32U4
+  /* All Zumo libraries */
+  #include "Zumo32U4.h"
 #endif
 
 /* Variable initialization */

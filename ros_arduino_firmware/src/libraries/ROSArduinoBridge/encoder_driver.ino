@@ -9,7 +9,22 @@
 
 #ifdef USE_BASE
 
-#if defined ROBOGAIA
+#if defined ZUMO32U4
+  /* Create encoder object */
+  Zumo32U4Encoders encoders;
+
+  /* Wrap the encoder reading function */
+  long readEncoder(int i) {
+    if (i == LEFT) return encoders.getCountsLeft();
+    else return encoders.getCountsRight();
+  }
+
+  /* Wrap the encoder reset function */
+void resetEncoder(int i) {
+  if (i == LEFT) return encoders.getCountsAndResetLeft();
+  else return encoders.getCountsAndResetRight();
+}
+#elif defined ROBOGAIA
   /* The Robogaia Mega Encoder shield */
   #include "MegaEncoderCounter.h"
 
